@@ -1,0 +1,94 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+---
+<Layout title="Home">
+	<main>
+		<h1>Hi! I'm <span style="width:10ch;" id="name" class="text-gradient">will.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp</span></h1>
+		<p style="font-size:large; margin-bottom: 30px;">
+			A college student majoring in <b>computer science</b> <br>
+			with a minor in <strong> game design</strong>.
+		</p>
+		<p>
+			I'm interested in art, games, and programming.
+			I'll be sharing my projects and blog posts with the process and thoughts about them.
+			<br> <br>
+			<strong>Experience in:</strong> C++, Java, C#, Python, x86 assembly, Haskell, and now apparently HTML, CSS, Javascript (in the form of Astro).
+		</p>
+
+		<ul role="list" class="link-card-grid">
+			<Card
+				href="/posts/A-star"
+				title="A* Pathfinding Implementation"
+				body="Post - Explanation and implementation of A* pathfinding algorithm."
+				image="/images/UnityAStar.png"
+				alt="Screencap in Unity Engine showing the A* demonstration and the project files."
+			/>
+			<Card
+				href="/works/A-star"
+				title="A* Demonstration"
+				body="Project - Interactive demonstration of A* done in Unity."
+				image="/images/Astar.png"
+				alt="Grid of squares with path between a star and end marked in red."
+			/>
+		</ul>
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: 1.5rem;
+		max-width: 90ch;
+	}
+	h1 {
+		font-size: 3rem;
+		font-weight: 800;
+		margin: 0;
+	}
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 300%;
+		background-position: 0%;
+	}
+
+	.link-card-grid {
+		display: grid;
+		grid-template-columns: 1;
+		gap: 1rem;
+		padding: 0;
+	}
+	#name{
+		
+	}
+</style>
+<!-- FIX ITERATING THROUGH DIFFERENT NAMES -->
+<script>
+	const alphabet = "abcdefghijklmnopqrstuvwxyz";
+	const names = ["will.\xa0\xa0\xa0\xa0\xa0\xa0", "winterkeep.", "llixs.\xa0\xa0\xa0\xa0\xa0"];
+	let wordIter = 0;
+	let nameIter = 0;
+	
+	document.getElementById("name").onmouseover = event => {
+		let name = event.target as HTMLElement;
+		const inter = setInterval(() => {
+			name.innerText = name.innerText.split("")
+			.map((chars,index) => { 
+				if(index < wordIter){
+					return names[nameIter%3][index];
+				}else{
+					return alphabet[Math.floor(Math.random()* 26)];
+				}
+			}).join("");
+			
+			if(wordIter >= 11){
+				wordIter = 0;
+				clearInterval(inter);
+			}
+			wordIter += 1/2;
+		}, 30);
+	nameIter += 1;
+	}
+</script>

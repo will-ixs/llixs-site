@@ -1,0 +1,31 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+---
+
+<Layout title="Works">
+    <main>
+		<h1>List of projects:</h1>
+      <Card
+      href="/works/A-star"
+      title="A* Demonstration"
+      body="Interactive demonstration of A* done in Unity."
+      image="/images/Astar.png"
+      alt="Grid of squares with path between a star and end marked in red."
+    />
+    </main>
+</Layout>
+<style>
+    main {
+      margin: auto;
+      padding: 1.5rem;
+      max-width: 90ch;
+  }
+  .text-gradient {
+      background-image: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 300%;
+      background-position: 0%;
+  }
+</style>

@@ -1,0 +1,33 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+---
+
+<Layout title="Posts">
+    <main>
+		<h1>Blog  - Under <span class="text-gradient">construction.</span></h1>
+        <p>Will contains thoughts and ramblings.</p>
+		<Card
+				href="/posts/A-star"
+				title="A* Pathfinding Implementation"
+				body="Explanation and implementation of A* pathfinding algorithm."
+				image="/images/UnityAStar.png"
+				alt="Screencap in Unity Engine showing the A* demonstration and the project files."
+			/>
+    </main>
+</Layout>
+
+<style>
+  	main {
+		margin: auto;
+		padding: 1.5rem;
+		max-width: 90ch;
+	}
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 300%;
+		background-position: 0%;
+	}
+</style>

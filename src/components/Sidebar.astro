@@ -1,0 +1,32 @@
+---
+import SidebarIcon from '../components/SidebarIcon.astro';
+import home from '../images/Home.svg';
+import folder from '../images/Folder.svg';
+import pencil from '../images/Pencil.svg';
+import link from '../images/Link.svg';
+---
+<div class="sidebar">
+    <div>
+        <img />
+    </div>
+    <SidebarIcon icon={home} href="/" alt="Homepage"/>
+    <SidebarIcon icon={folder} href="/works" alt="Works"/>
+    <SidebarIcon icon={pencil} href="/posts" alt="Posts"/>
+    <SidebarIcon icon={link} href="/connect" alt="Links"/>
+</div>
+
+<style>
+    div{
+        min-height: 1rem;
+    }
+    .sidebar{
+        display: flex; 
+        position: fixed;
+        top: 0; 
+        left: 0; 
+        flex-direction: column; 
+        width: 5.5rem; 
+        height: 100vh; 
+        background-color: #222222;
+    }
+</style>
