@@ -10,8 +10,7 @@ import Card from '../components/Card.astro';
 			with a minor in <strong> game design</strong>.
 		</p>
 		<p>
-			I'm interested in art, games, and programming.
-			I'll be sharing my projects and blog posts with the process and thoughts about them.
+			I'm interested in art, game development, and programming.
 			<br> <br>
 			<strong>Experience in:</strong> C++, Java, C#, Python, x86 assembly, Haskell, and now apparently HTML, CSS, Javascript (in the form of Astro).
 		</p>
@@ -64,10 +63,9 @@ import Card from '../components/Card.astro';
 		
 	}
 </style>
-<!-- FIX ITERATING THROUGH DIFFERENT NAMES -->
 <script>
 	const alphabet = "abcdefghijklmnopqrstuvwxyz";
-	const names = ["will.\xa0\xa0\xa0\xa0\xa0\xa0", "winterkeep.", "llixs.\xa0\xa0\xa0\xa0\xa0"];
+	const names = ["will.\xa0\xa0", "llixs.\xa0"];
 	let wordIter = 0;
 	let nameIter = 0;
 	
@@ -83,7 +81,7 @@ import Card from '../components/Card.astro';
 				}
 			}).join("");
 			
-			if(wordIter >= 11){
+			if(wordIter >= 7){
 				wordIter = 0;
 				clearInterval(inter);
 			}
