@@ -4,17 +4,18 @@ import Card from '../components/Card.astro';
 ---
 <Layout title="Home">
 	<main>
-		<h1>Hi! I'm <span style="width:10ch;" id="name" class="text-gradient">will.&nbsp;&nbsp;</span></h1>
+		<h1>Hi! I'm <span style="width:10ch;" id="name" class="text-gradient">will.&nbsp;</span></h1>
 		<p style="font-size:large; margin-bottom: 30px;">
 			A college student majoring in <b>computer science</b> <br>
 			with a minor in <strong> game design</strong>.
 		</p>
 		<p>
-			I'm interested in game development, art, and programming.
+			I'm interested in computer graphics, game development and art.
 			<br> <br>
 			<strong>Experience in:</strong> C++, Java, C#, Python, and Astro (HTML, CSS, Javascript).
 		</p>
-
+		<br><br><br>
+		<h2>Feed:</h2>
 		<ul role="list" class="link-card-grid">
 			<Card
 				href="/posts/A-star"
@@ -65,7 +66,7 @@ import Card from '../components/Card.astro';
 </style>
 <script>
 	const alphabet = "abcdefghijklmnopqrstuvwxyz";
-	const names = ["will.\xa0\xa0", "llixs.\xa0"];
+	const names = ["will.\xa0", "llixs."];
 	let wordIter = 0;
 	let nameIter = 0;
 	
@@ -75,13 +76,13 @@ import Card from '../components/Card.astro';
 			name.innerText = name.innerText.split("")
 			.map((chars,index) => { 
 				if(index < wordIter){
-					return names[nameIter%3][index];
+					return names[nameIter%2][index];
 				}else{
 					return alphabet[Math.floor(Math.random()* 26)];
 				}
 			}).join("");
 			
-			if(wordIter >= 7){
+			if(wordIter >= 6){
 				wordIter = 0;
 				clearInterval(inter);
 			}
